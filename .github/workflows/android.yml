@@ -1,14 +1,13 @@
-name: Android CI
+name: Build & Release APK
 
 on:
   push:
-    branches:
-      - master
-  pull_request:
+    tags:
+      - 'v*'
 
 jobs:
   build:
-
+    name: Build APK and Release
     runs-on: ubuntu-latest
 
     steps:
@@ -24,11 +23,20 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./gradlew
 
-    - name: Build with Gradle
+    - name: Build APK
       run: ./gradlew assembleDebug
 
-    - name: Upload APK
+    - name: Upload APK artifact
       uses: actions/upload-artifact@v3
       with:
         name: MyFakeDeviceApp-APK
         path: app/build/outputs/apk/debug/app-debug.apk
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Release ${{ github.ref_name }}
+        tag_name: ${{ github.ref }}
+        files: app/build/outputs/apk/debug/app-debug.apk
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
