@@ -4,9 +4,87 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tab Thiết bị"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editImei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IMEI" />
+
+        <EditText
+            android:id="@+id/editMac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ MAC" />
+
+        <EditText
+            android:id="@+id/editDeviceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên thiết bị" />
+
+        <EditText
+            android:id="@+id/editAndroidVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phiên bản Android" />
+
+        <EditText
+            android:id="@+id/editSerial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số Serial" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnFake"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="FAKE" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="RESET" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn thiết bị nhanh:"
+            android:layout_marginTop="16dp" />
+
+        <GridLayout
+            android:id="@+id/gridProfiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="5"
+            android:layout_marginTop="8dp">
+
+            <Button android:text="LG V50"/>
+            <Button android:text="Samsung S10"/>
+            <Button android:text="Pixel 6"/>
+            <Button android:text="Xiaomi Mi 11"/>
+            <Button android:text="Huawei P40"/>
+            <Button android:text="Oppo Reno 8"/>
+            <Button android:text="Asus ROG Phone"/>
+            <Button android:text="OnePlus 9"/>
+            <Button android:text="Nokia 8.3"/>
+            <Button android:text="Sony Xperia 1"/>
+        </GridLayout>
+    </LinearLayout>
 </ScrollView>

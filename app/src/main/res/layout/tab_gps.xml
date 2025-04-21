@@ -4,9 +4,76 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tab GPS"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vĩ độ (Latitude)" />
+
+        <EditText
+            android:id="@+id/editLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kinh độ (Longitude)" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnStartGps"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Chạy GPS" />
+
+            <Button
+                android:id="@+id/btnStopGps"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Dừng GPS" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFakeGps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FAKE"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnResetGps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESET" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn địa điểm nhanh:"
+            android:layout_marginTop="16dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:layout_marginTop="8dp">
+
+            <Button android:text="Hà Nội"/>
+            <Button android:text="TP.HCM"/>
+            <Button android:text="New York"/>
+            <Button android:text="Tokyo"/>
+            <Button android:text="London"/>
+            <Button android:text="Sydney"/>
+        </GridLayout>
+    </LinearLayout>
 </ScrollView>
