@@ -1,0 +1,2 @@
+rootProject.name = "MyFakeDeviceApp"
+include ':app'
