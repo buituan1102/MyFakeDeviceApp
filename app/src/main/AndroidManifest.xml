@@ -2,16 +2,22 @@
     package="com.example.fakedevice">
 
     <application
-        android:allowBackup="true"
-        android:label="Fake Device"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.FakeDeviceApp">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity android:name=".tabs.FakeDeviceTab" android:exported="false" />
+        <activity android:name=".tabs.GpsTab" android:exported="false" />
+        <activity android:name=".tabs.ProfileTab" android:exported="false" />
+
+    </application>
 </manifest>
