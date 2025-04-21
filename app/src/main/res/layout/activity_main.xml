@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textInfo"
+        android:id="@+id/fakeInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fake Device Info sẽ hiển thị ở đây"
+        android:text="Thông tin thiết bị giả sẽ hiển thị ở đây"
+        android:padding="10dp"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnFake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FAKE" />
+
 </LinearLayout>

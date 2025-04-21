@@ -1,23 +1,29 @@
 package com.example.fakedevice;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
+    TextView fakeInfo;
+    Button showFake;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FakeDeviceManager faker = new FakeDeviceManager();
+        fakeInfo = findViewById(R.id.fakeInfo);
+        showFake = findViewById(R.id.btnFake);
 
-        String info = "IMEI: " + faker.generateRandomIMEI() + "\n" +
-                      "MAC: " + faker.generateRandomMAC() + "\n" +
-                      "Serial: " + faker.generateRandomSerial();
-
-        TextView textView = findViewById(R.id.textInfo);
-        textView.setText(info);
+        showFake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FakeDeviceManager fdm = new FakeDeviceManager();
+                fakeInfo.setText(fdm.getFakeInfo());
+            }
+        });
     }
 }
