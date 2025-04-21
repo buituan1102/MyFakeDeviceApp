@@ -24,7 +24,7 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
-      - name: Upload release to GitHub
+      - name: Release APK to GitHub
         uses: ncipollo/release-action@v1
         with:
           artifacts: app/build/outputs/apk/debug/app-debug.apk
